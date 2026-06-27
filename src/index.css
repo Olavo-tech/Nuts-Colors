@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --animate-shake: shake 0.4s ease-in-out;
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    15%, 45%, 75% { transform: translateX(-6px) rotate(-1deg); }
+    30%, 60%, 90% { transform: translateX(6px) rotate(1deg); }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-zinc-950 text-zinc-100 transition-colors duration-300;
+  }
+}
+
+/* Professional Polish Theme Utilities */
+.pro-bg {
+  background: #121212;
+}
+
+.pro-header {
+  @apply bg-zinc-900 border-b border-zinc-800;
+}
+
+.pro-card {
+  @apply bg-zinc-900 border border-zinc-800 rounded-[24px] shadow-lg;
+}
+
+.pro-button-primary {
+  @apply bg-zinc-100 hover:bg-zinc-200 text-zinc-950 hover:scale-[1.01] active:scale-[0.99] transition-all font-display font-black uppercase tracking-wider rounded-xl;
+}
+
+.pro-button-secondary {
+  @apply bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 active:scale-[0.98] transition-all font-semibold uppercase tracking-wider rounded-xl;
+}
+
+.pro-border {
+  @apply border border-zinc-800;
+}
+
+.pro-glow-yellow {
+  @apply border border-zinc-700 shadow-sm;
+}
+
+.pro-glow-indigo {
+  @apply border border-zinc-700 shadow-sm;
+}
+
+/* Custom scrollbars for level grids and leaderboard views */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full hover:bg-zinc-700;
+}
+
+/* Hexagon SVG shadow effect */
+.glow-hexagon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Glow animations for hint modes */
+@keyframes pulseGlow {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.4); }
+  50% { border-color: rgba(255, 255, 255, 0.95); }
+}
+
+.pulse-glow-green {
+  animation: pulseGlow 1.5s infinite;
+}
